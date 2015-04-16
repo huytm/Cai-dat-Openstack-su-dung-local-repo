@@ -3,7 +3,9 @@
 Mục đích của bài viết này phục vụ cho việc:
 - Cài đặt Openstack mà không phụ thuộc vào đường truyền internet
 - Backup, lưu trữ một phiên bản Openstack đã cài đặt hoàn chỉnh để phục vụ các lần cài đặt sau
+
 ---
+
 # Thực hiện
 
 Thực hiện theo ý tưởng của bài viết [sau](https://github.com/trananhkma/Local-Repository). 
