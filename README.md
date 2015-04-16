@@ -6,7 +6,7 @@ Mục đích của bài viết này phục vụ cho việc:
 ---
 # Thực hiện
 
-Thực hiện theo ý tưởng của bài viết **[sau]**(https://github.com/trananhkma/Local-Repository). 
+Thực hiện theo ý tưởng của bài viết [sau](https://github.com/trananhkma/Local-Repository). 
 
 - Tức là sẽ có một máy ở **local** làm **repository-server**, máy này sẽ chứa tất cả các gói đã được cài đặt thành công. 
 
@@ -26,19 +26,19 @@ mkdir /var/www/html/juno
 - 2. Tại các máy ***ĐÃ CÀI ĐẶT THÀNH CÔNG OPENSTACK*** sử dụng lệnh `scp`để copy toàn bộ những gói cài đặt trong folder `/var/cache/apt/archives/` vào ***folder tương ứng*** của **repository-server**
 ```
 cd /var/cache/apt/archives/
-scp -r * root@ip_repository_server:/var/www/html/icehouse  (Nếu là icehouse) 
-scp -r * root@ip_repository_server:/var/www/html/juno (Nếu là juno)
+scp -r * root@ip_repository_server:/var/www/html/icehouse     (Nếu là Icehouse) 
+scp -r * root@ip_repository_server:/var/www/html/juno         (Nếu là Juno)
 ```
 
 - 3. Trở lại **repository-server** `cd` đến mỗi folder và thực hiện lệnh sau
 ```
-cd /var/www/html/icehouse
-dpkg-scanpackages . /dev/null | gzip -9c > Packages.gz
+cd /var/www/html/icehouse 
+dpkg-scanpackages . /dev/null | gzip -9c > Packages.gz  (Nếu là Icehouse)
 cd /var/www/html/juno
-dpkg-scanpackages . /dev/null | gzip -9c > Packages.g
+dpkg-scanpackages . /dev/null | gzip -9c > Packages.g   (Nếu là Juno)
 ```
 
-- 4. Tại máy ***CLIENT ( TỨC LÀ MÁY CÀI ĐẶT MỚI  OPENSTACK )***sử ện như sau
+- 4. Tại máy ***CLIENT ( TỨC LÀ MÁY CÀI ĐẶT MỚI  OPENSTACK )*** thực hiện lệnh như sau
 ```
 mv /etc/apt/sources.list /etc/apt/sources.list.bak
 vi /etc/apt/sources.list
